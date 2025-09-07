@@ -47,11 +47,12 @@
         <div class="act">▶</div>
       `;
       li.addEventListener('click', () => {
-        load(i);
-        play();
-      });
-      trackListEl.appendChild(li);
-    });
+  load(i);
+  audio.loop = false;        // Asegura que no se repita
+  audio.currentTime = 0;     // Reinicia desde el inicio
+  audio.play();              // Reproduce inmediatamente
+});
+
     highlightActive();
   }
 
