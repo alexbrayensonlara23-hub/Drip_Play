@@ -178,6 +178,12 @@ function initDripPlay(PLAYLIST) {
     if (e.code === 'KeyL') btnLoop.click();
     if (e.code === 'KeyS') btnShuffle.click();
   });
+const audio = document.querySelector('audio');
+const volumeControl = document.getElementById('volumeControl');
+
+volumeControl.addEventListener('input', () => {
+  audio.volume = volumeControl.value;
+});
 
   // Init
   drawList();
