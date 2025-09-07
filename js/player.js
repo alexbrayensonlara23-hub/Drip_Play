@@ -46,12 +46,14 @@
         </div>
         <div class="act">▶</div>
       `;
-      li.addEventListener('click', () => {
+      function oneShotPlay(i) {
   load(i);
-  audio.loop = false;        // Asegura que no se repita
-  audio.currentTime = 0;     // Reinicia desde el inicio
-  audio.play();              // Reproduce inmediatamente
+  audio.loop = false;
+  audio.currentTime = 0;
+  audio.play();
 });
+    li.addEventListener('click', () => oneShotPlay(i));
+
 
     highlightActive();
   }
