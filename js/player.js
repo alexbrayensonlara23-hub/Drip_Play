@@ -9,10 +9,6 @@
   const durationEl = $('#duration');
   const seek = $('#seek');
   const playBtn = $('#play');
-  const prevBtn = $('#prev');
-  const nextBtn = $('#next');
-  const loopBtn = $('#loop');
-  const shuffleBtn = $('#shuffle');
   const muteBtn = $('#mute');
   const volume = $('#volume');
   const download = $('#download');
@@ -43,14 +39,12 @@
         </div>
         <div>▶</div>
       `;
-
       li.addEventListener('click', () => {
         load(i);
-        audio.loop = false; // siempre una sola vez
+        audio.loop = false;
         audio.currentTime = 0;
         audio.play();
       });
-
       trackListEl.appendChild(li);
     });
     highlightActive();
@@ -60,9 +54,8 @@
     index = i;
     const t = playlist[i];
     if (!t) return;
-
     audio.src = t.src;
-    audio.loop = false; // nunca repetir automáticamente
+    audio.loop = false;
     title.textContent = t.title || '—';
     artist.textContent = t.artist || '—';
     bpm.textContent = (t.bpm ? t.bpm : '—') + ' BPM';
@@ -78,7 +71,6 @@
     if (active) active.classList.add('active');
   }
 
-  // Play / Pause
   playBtn.addEventListener('click', () => {
     if (audio.paused) {
       audio.play();
@@ -89,7 +81,6 @@
     }
   });
 
-  // Volumen
   volume.addEventListener('input', () => {
     audio.volume = volume.value;
   });
@@ -99,7 +90,6 @@
     muteBtn.textContent = audio.muted ? '🔇' : '🔈';
   });
 
-  // Barra de progreso
   audio.addEventListener('timeupdate', () => {
     seek.value = (audio.currentTime / audio.duration) * 100 || 0;
     currentTimeEl.textContent = formatTime(audio.currentTime);
