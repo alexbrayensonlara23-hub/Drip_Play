@@ -46,15 +46,17 @@
         </div>
         <div class="act">▶</div>
       `;
-      function oneShotPlay(i) {
-  load(i);
-  audio.loop = false;
-  audio.currentTime = 0;
-  audio.play();
-});
-    li.addEventListener('click', () => oneShotPlay(i));
 
+      // 🔊 Reproducción tipo one shot
+      li.addEventListener('click', () => {
+        load(i);
+        audio.loop = false;
+        audio.currentTime = 0;
+        audio.play();
+      });
 
+      trackListEl.appendChild(li);
+    });
     highlightActive();
   }
 
@@ -136,7 +138,6 @@
     audio.volume = parseFloat(volume.value);
   });
 
-  // Time + seek
   audio.addEventListener('loadedmetadata', () => {
     durationEl.textContent = fmt(audio.duration);
   });
@@ -156,12 +157,10 @@
     seek.dragging = false;
   });
 
-  // Autoplay siguiente
   audio.addEventListener('ended', () => {
     if (!audio.loop) next(true);
   });
 
-  // Atajos
   document.addEventListener('keydown', (e) => {
     const tag = (e.target.tagName || '').toLowerCase();
     if (tag === 'input' || tag === 'textarea') return;
