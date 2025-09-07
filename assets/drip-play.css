@@ -1,6 +1,22 @@
 /* =========================
-   Drip Play — Minimal Match
+   Drip Play — Minimal + Auto Dark
    ========================= */
+
+:root {
+  --bg: #fff;
+  --fg: #000;
+  --muted: #e6e6e6;
+  --accent: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000;
+    --fg: #fff;
+    --muted: #333;
+    --accent: #fff;
+  }
+}
 
 .drip-play {
   width: 100%;
