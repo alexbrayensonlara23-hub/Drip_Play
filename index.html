@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Drip Play — Playlist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/drip-play.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drip Play</title>
+
+  <!-- Fuente: puedes auto-hospedar si prefieres -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Contenedor del reproductor -->
-  <main class="drip-play" id="dripPlay" aria-label="Reproductor de playlist"></main>
-<div class="player-controls">
-  <button id="playBtn">▶</button>
-  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
-</div>
-  <a id="downloadBtn" href="" download>⬇ Descargar</a>
-  <!-- Script principal -->
-  <script src="assets/drip-play.js"></script>
+  <main class="player-shell">
+    <section class="now-playing">
+      <div class="cover" id="cover" aria-hidden="true"></div>
+
+      <div class="meta">
+        <h1 class="title" id="title">—</h1>
+        <p class="subtitle">
+          <span id="artist">—</span>
+          <span class="dot">·</span>
+          <span id="bpm">— BPM</span>
+        </p>
+
+        <div class="progress">
+          <span class="time" id="currentTime">0:00</span>
+          <input type="range" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Progreso" />
+          <span class="time" id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+          <button class="btn" id="prev" aria-label="Anterior">⏮</button>
+          <button class="btn primary" id="play" aria-label="Reproducir">▶</button>
+          <button class="btn" id="next" aria-label="Siguiente">⏭</button>
+
+          <div class="spacer"></div>
+
+          <button class="btn" id="loop" aria-label="Loop">∞</button>
+          <button class="btn" id="shuffle" aria-label="Shuffle">🔀</button>
+
+          <div class="volume">
+            <button class="btn" id="mute" aria-label="Mute">🔈</button>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="1" aria-label="Volumen" />
+          </div>
+
+          <a class="btn" id="download" href="#" download aria-label="Descargar">⬇</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="list">
+      <ul id="trackList" class="tracks" aria-label="Lista de pistas"></ul>
+    </section>
+  </main>
+
+  <audio id="audio" preload="metadata" crossorigin="anonymous"></audio>
+  <script src="js/player.js"></script>
 </body>
 </html>
-
-
-
-
-
