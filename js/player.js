@@ -60,28 +60,22 @@
     highlightActive();
   }
 
-  function load(i) {
-    index = i;
-    const t = playlist[i];
-    if (!t) return;
+function load(i) {
+  index = i;
+  const t = playlist[i];
+  if (!t) return;
 
-    audio.src = t.src;
-    title.textContent = t.title || '—';
-    artist.textContent = t.artist || '—';
-    bpm.textContent = (t.bpm ? t.bpm : '—') + ' BPM';
-    download.href = t.src || '#';
+  audio.src = t.src;
+  audio.loop = false; // siempre una sola vez
+  title.textContent = t.title || '—';
+  artist.textContent = t.artist || '—';
+  bpm.textContent = (t.bpm ? t.bpm : '—') + ' BPM';
+  download.href = t.src || '#';
+  cover.style.backgroundImage = t.cover ? `url("${t.cover}")` : 'none';
+  playBtn.textContent = '▶';
+  highlightActive();
 
-    if (t.cover) {
-      cover.style.backgroundImage = `url("${t.cover}")`;
-      cover.style.backgroundSize = 'cover';
-      cover.style.backgroundPosition = 'center';
-    } else {
-      cover.style.backgroundImage = 'none';
-    }
-
-    playBtn.textContent = '▶';
-    highlightActive();
-  }
+}
 
   function highlightActive() {
     $$('.track').forEach(el => el.classList.remove('active'));
