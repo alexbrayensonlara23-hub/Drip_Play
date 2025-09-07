@@ -16,6 +16,12 @@ function initDripPlay(PLAYLIST) {
   let index = 0;
   let isShuffle = false;
   const order = [...PLAYLIST.keys()];
+  
+   function loadTrack(track) {
+  audio.src = track.src;
+  document.getElementById('downloadBtn').href = track.src;
+}
+
 
   // Crear estructura HTML dentro del contenedor
   const container = document.getElementById('dripPlay');
