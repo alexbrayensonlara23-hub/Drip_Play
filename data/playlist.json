@@ -1,23 +1,23 @@
 [
   {
-    "title": "Intro Loop",
-    "artist": "DripSounds",
-    "src": "assets/audio/intro_loop.mp3",
-    "bpm": 120,
-    "cover": "assets/covers/intro.jpg"
+    "title": "Kick 1",
+    "artist": "Drip Sounds",
+    "src": "assets/audio/Kick (1).wav",
+    "bpm": 0,
+    "cover": "assets/covers/Infinity.png"
   },
   {
     "title": "Night Drive",
-    "artist": "DripSounds",
+    "artist": "Drip Sounds",
     "src": "assets/audio/night_drive.mp3",
-    "bpm": 95,
-    "cover": "assets/covers/night.jpg"
+    "bpm": 0,
+    "cover": "assets/covers/Infinity.png"
   },
   {
     "title": "Pulse",
-    "artist": "DripSounds",
-    "src": "assets/audio/pulse.mp3",
-    "bpm": 140
+    "artist": "Drip Sounds",
+    "src": "assets/covers/Infinity.png",
+    "bpm": 0
   }
 ]
 
