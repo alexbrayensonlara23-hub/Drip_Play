@@ -7,16 +7,16 @@
     "cover": "assets/covers/Infinity.png"
   },
   {
-    "title": "Night Drive",
+    "title": "Rim 5",
     "artist": "Drip Sounds",
-    "src": "assets/audio/night_drive.mp3",
+    "src": "assets/audio/Rim (5).wav",
     "bpm": 0,
     "cover": "assets/covers/Infinity.png"
   },
   {
-    "title": "Pulse",
+    "title": "Hat 6",
     "artist": "Drip Sounds",
-    "src": "assets/covers/Infinity.png",
+    "src": "assets/audio/Hat (6).wav",
     "bpm": 0
   }
 ]
