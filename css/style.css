@@ -1,5 +1,5 @@
 /* =========================
-   VARIABLES Y BASE
+   VARIABLES
 ========================= */
 :root {
   --bg: #ffffff;
@@ -8,6 +8,15 @@
   --border: #000000;
   --radius: 8px;
   --font: 'Anonymous Pro', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --fg: #ffffff;
+    --muted: #1a1a1a;
+    --border: #ffffff;
+  }
 }
 
 * {
@@ -72,7 +81,7 @@ body {
 .meta p {
   margin: 0;
   font-size: 0.9rem;
-  color: #555;
+  color: #777;
 }
 
 /* =========================
